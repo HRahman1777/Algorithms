@@ -66,7 +66,12 @@ void deleteNode(int value){
         temp2 = temp;
         temp = temp->next;
     }
-    temp2->next = temp->next;
+    if(temp->data == head->data){
+        head = temp->next;
+    }else{
+        temp2->next = temp->next;
+    }
+
 }
 
 
@@ -87,7 +92,7 @@ int main() {
    insertOnFirst(0);
    insertOnLast(6);
    insertAfterValue(4, 7);
-   deleteNode(3);
+   deleteNode(0);
    cout<<"The linked list is: ";
    display();
 
